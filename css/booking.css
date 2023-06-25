@@ -1,0 +1,406 @@
+/* #fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* variables */
+
+:root{
+    --hue: 200;
+    --saturation: 70%;
+    --lightness: 55%
+    --main-color: hsl(var(--hue), var(--saturation), var(--lightness));
+
+/* text colors */
+--text-white: hsl(0, 0%, 100%);
+--text-light-gray: hsl(0, 0%, 96%);
+--text-x-dark-gray: hsl(0, 0%, 10%);
+--text-dark-gray: hsl(0, 0%, 20%);
+
+/* bg colors */
+--body-bg-color: hsl(var(--hue), 60%, 94%);
+--bg-color: hsl(var(--hue), 60%, 96%);
+--bg-white: hsl(0, 0%, 100%);
+
+/* border color */
+--border-color: hsl(var(--hue), 48%, 80%);
+
+/* shadow */
+--shadow: 0 0 10px hsla(var(--hue), 57%, 63%, 0.3%);
+--focus-shadow: 0 0 10px hsla(var(--hue), 57%, 63%, 0.6%);
+
+/* font size */
+--fs-4xl: 50px;
+--fs-3xl: 35px;
+--fs-2xl: 26px;
+--fs-xl: 20px;
+--fs-lg: 18px;
+--fs-md: 16px;
+--fs-sm: 14px;
+}
+
+/* base */
+html{
+    scroll-behavior: smooth;
+}
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ ::before,
+ ::after{
+    box-sizing: border-box;
+ }
+ body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: var(--fs-md);
+    line-height: 1.5;
+    color: var(--text-dark-gray);
+    background-color: var(--body-bg-color);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+ }
+ a{
+    color: var(--main-color);
+    text-decoration: none;
+ }
+ ul{
+    list-style: none;
+ }
+ h1,h2,h3,h4,h5,h6{
+    color: var(--text-x-dark-gray);
+    line-height: 1.3;
+ }
+ img{
+    max-width: 100%;
+    vertical-align: middle;
+ }
+ p{
+    margin-bottom: 15px;
+ }
+ 
+ ::selection{
+    color: var(--text-white);
+    background-color: var(--main-color);
+ }
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--body-bg-color);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--body-bg-color);
+}
+ /* page wraper */
+.page-wrapper{
+    overflow: hidden;
+}
+ /* page container */
+ .container{
+    max-width: 1170px;
+    margin: auto;
+    padding: 0 15px;
+ }
+
+/* header */
+
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    padding: 10px 0;
+    /* background-color: white; */
+}
+.header::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-color);
+    box-shadow: var(--shadow);
+    z-index: -1;
+    transform: translateY(calc(-100% - 10px));
+    transition: transform 0.5s ease;
+}
+.header.bg-reveal::before{
+    transform: translateY(0);
+}
+.header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header.logo{
+    background: none;
+}
+nav li{
+    display: inline-block;
+    margin-left: 35px;
+}
+.nav a{
+    text-transform: capitalize;
+    font-size: var(--fs-md);
+    color: var(--text-x-dark-gray);
+    font-weight: 400;
+    display: block;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+.nav a:hover{
+    /* color: var(--main-color); */
+    color: blue;
+}
+.nav-toggler{
+    display: none;
+}
+
+
+/*----------------------FORM-----------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: #4070f4; */
+}
+blockquote{
+    font-size: 1rem;
+    padding: 1rem 2.8rem;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    box-shadow: inset 0.5rem 0 0 #fd735a;
+    background-color: #f5f5f5;
+}
+.container1{
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 100px 15px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.container1 header{
+    font-size: 20px;
+    position: relative;
+    font-weight: 600;
+    color: #333;
+}
+.container1 header::before{
+    content: "";
+    left: 0;
+    position: absolute;
+    bottom: -2px;
+    height: 3px;
+    width: 27px;
+    border-radius: 8px;
+    background-color: #4070f4;
+}
+.container1 form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 490px;
+    background-color: #fff
+}
+.container1 form .details{
+    margin-top: 30px;
+}
+.container1 form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+form .fields .input-field{
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+form .fields .textarea-field{
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.input-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+.input-field input,select{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+.input-field input:is(:focus, :valid){
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+/* .textarea-field textarea{
+    width: 100%;
+    height: 80px;
+} */
+.textarea-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+.textarea-field textarea{
+    width: 500px;
+    height: 100px;
+    font-size: 20px;
+    margin: auto;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+.container1 form button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: #4070f4;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+form button:hover{
+    background-color: #265df2;
+}
+@media(max-width: 767px){
+    /*variables*/
+    :root{
+        --fs-4x1: 35px;
+        --fs-3xl: 26px;
+        --fs-2xl: 22px;
+        --fs-xl: 18px;
+    }
+    /*header*/
+    .nav-toggler{
+        display: block;
+        height: 34px;
+        width: 20px;
+        border: none;
+        z-index: 1;
+        background-color: transparent;
+    }
+    .nav-toggler span{  
+        display: block;
+        height: 2px;
+        width: 24px;
+        /* background-color: var(--main-color); */
+        background-color: blue;
+        margin: auto;
+        position: relative;
+        transition: background-color 0.3s ease;
+    }
+    .nav-toggler.active span{
+        background-color: transparent;
+    }
+    .nav-toggler span::after,
+    .nav-toggler span::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        /* background-color: var(--main-color); */
+        background-color: blue;
+        transition: transform 0.3s ease;
+    }
+    .nav-toggler span::before{
+        transform: translateY(-7px);
+    }
+    .nav-toggler.active span::before{
+        transform: rotate(45deg);
+    }
+    .nav-toggler span::after{
+        transform: translateY(7px);
+    }
+    .nav-toggler.active span::after{
+        transform: rotate(-45deg);
+    }
+    .nav{
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 260px;
+        background-color: var(--bg-color);
+        /* background-color: blue; */
+        padding: 60px 30px 30px;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: all 0.3s ease;
+    }
+    .nav.open{
+        transform: translateX(0);
+        box-shadow: var(--shadow);
+    }
+    .nav li{
+        display: block;
+        margin: 0;
+    }
+    .nav a{
+        font-size: var(--fs-lg);
+    }
+    .nav li + li{
+        border-top: 1px solid var(--border-color);
+    }
+}
+@media (max-width: 750px){
+
+    .container1 form{
+        overflow-y: scroll;
+    }
+    .container1 form::-webkit-scrollbar{
+        display: none;
+    }
+
+    form .fields .input-field{
+        width: 100%;
+    }
+    form .fields .textarea-field{
+        width: 100%;
+    }
+}
