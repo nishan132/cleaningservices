@@ -10,19 +10,13 @@
     <link type="text/css" rel="stylesheet" href="css/blog.css" />
   </head>
   <body>
-    <!--Preloader-->
-    <!-- <div class="preloader js-preloader">
-      <div></div>
-    </div> -->
-    <!--Preloader end-->
-
     <!--page Wrapper start-->
     <div class="page-wrapper">
       <!--header start-->
       <header class="header js-header">
         <div class="container">
           <div class="logo" data-aos="fade-down" data-aos-duration="1000">
-            <a href="index.php"> <img src="./img/logo1.png" alt="your logo" height="70px" /></a>
+            <a href="index.php"> <img src="./img/logo.png" alt="your logo" height="70px" /></a>
           </div>
           <button type="button" class="nav-toggler js-nav-toggler">
             <span></span>

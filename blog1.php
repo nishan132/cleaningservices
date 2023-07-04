@@ -17,7 +17,7 @@
         <div class="container">
           <div class="logo" data-aos="fade-down" data-aos-duration="1000">
             <a href="index.php">
-              <img src="img/logo1.png" alt="your logo" height="70px"
+              <img src="img/logo.png" alt="your logo" height="70px"
             /></a>
           </div>
           <button type="button" class="nav-toggler js-nav-toggler">

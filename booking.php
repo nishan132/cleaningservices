@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="css/booking.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <title>Booking - I Promise Cleaning Services</title>
 </head>
 <body>
@@ -16,7 +15,7 @@
         <header class="header js-header">
           <div class="container">
             <div class="logo" data-aos="fade-down" data-aos-duration="1000">
-            <a href="index.php"><img src="./img/logo1.png" alt="your logo" height="70px" /></a>
+            <a href="index.php"><img src="./img/logo.png" alt="your logo" height="70px" /></a>
             </div>
             <button type="button" class="nav-toggler js-nav-toggler">
               <span></span>
@@ -40,12 +39,6 @@
         <?php
           if( $_GET['status'] == 'success'){
             ?>
-            <!-- <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <strong>Booking successfull!</strong> We will contact you soon. Thank you
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div> -->
             <blockquote>
               <strong>Booking Successful</strong> We will Contact You Soon. Thank You
           </blockquote>
@@ -72,42 +65,42 @@
                         </div>
                         <div class="input-field">
                             <label>Preferred Date of Cleaning</label>
-                            <input type="date" name="date" required>
+                            <input type="date" name="date">
                         </div>
                         <div class="input-field">
                             <label>Preferred Time of Cleaning</label>
-                            <input type="time" name="time" required>
+                            <input type="time" name="time">
                         </div>
                         <div class="input-field">
                             <label>Select Service</label>
                             <select name="service">
                                 <option value="">Select Service</option>
+                                <option value="Bond Cleaning  / End of Lease Cleaning">Bond Cleaning / End of Lease Cleaning</option>
+                                <option value="Residential Cleaning">Residential Cleaning</option>
+                                <option value="Oven Cleaning">Oven Cleaning</option>
+                                <option value="Window Cleaning">Window Cleaning</option>
+                                <option value="Regular Cleaning">Regular Cleaning</option>
+                                <option value="Deep Cleaning">Deep Cleaning</option>
+                                <option value="Outdoor Cleaning">Outdoor Cleaning</option>
+                                <option value="Kitchen Cleaning">Kitchen Cleaning</option>
+                                <option value="Bathroom Cleaning">Bathroom Cleaning</option>
+                                <option value="Eco-friendly Cleaning">Eco-friendly Cleaning</option>
+                                <option value="Office Cleaning">Office Cleaning</option>
                                 <option value="Carpet Cleaning">Carpet Cleaning</option>
-                                <option value="House Cleaning">House Cleaning</option>
-                                <option value="Floor Cleaning">Floor Cleaning</option>
+                                <option value="Furniture Cleaning">Furniture Cleaning</option>
                               </select>
                         </div>
                         <div class="input-field">
                             <label>Location</label>
-                            <select name="location">
-                                <option value="">Select Location</option>
-                                <option value="Location 1">Location 1</option>
-                                <option value="Location 2">Location 2</option>
-                                <option value="Location 3">Location 3</option>
-                              </select>
+                            <input type="text" name="location">
                         </div>
                         <div class="input-field">
-                            <label>Town</label>
-                            <input type="text" name="town" required>
+                            <label>Suburb</label>
+                            <input type="text" name="suburb" >
                         </div>
-                        <div class="input-field">
-                          <label>Others</label>
-                          <input type="text" name="others" required>
-                      </div>
                         <div class="textarea-field">
                             <label>Message</label>
                             <textarea name="message"
-                              required
                             ></textarea>
                           </div>
                     </div>
@@ -119,17 +112,14 @@
             </div>
         </form>
     </div>
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="js/main.js"></script> -->
+<script src="js/main.js"></script>
 
 </body>
 </html>
 
 <?php
 // define variables and set to empty values
-$name = $email = $contact = $service = $date = $time = $location = $town = $message = "";
+$name = $email = $contact = $service = $date = $time = $location = $suburb = $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["fullname"] != '') {
   
@@ -140,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["fullname"] != '') {
   $date = test_input($_POST["date"]);
   $time = test_input($_POST["time"]);
   $location = test_input($_POST["location"]);
-  $town = test_input($_POST["town"]);
+  $suburb = test_input($_POST["suburb"]);
   $message = test_input($_POST["message"]);
 
  // the message
@@ -151,11 +141,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["fullname"] != '') {
           "\r\nDate: ".$date.
           "\r\nTime: ". $time.
           "\r\nLocation: ".$location.
-          "\r\nTown: ". $town.
+          "\r\nSuburb: ". $suburb.
           "\r\nMessage: ". $message;
   $headers .= 'From: ' . $email;
   // send email
-  $response = mail("asdas@gmail.com","Booking Mail",$msg, $headers);
+  $response = mail("support@ipromiseservices.com.au","Booking Mail",$msg, $headers);
   
   echo "<script>window.location.href='booking.php?status=success';</script>";
     exit;
